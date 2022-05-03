@@ -50,11 +50,20 @@ public class DinosManager : MonoBehaviour
         }
     }
 
-    public void DinoAttackedPlayer()
+    public void DinoAttackedPlayer(DinoBase dino)
     {
         if (!hasLevelEnded)
         {
             hasLevelEnded = true;
+
+            foreach (var d in dinos)
+            {
+                if (d != dino)
+                {
+                    d.StopDino(true);
+                }
+            }
+
             HUD.Instance.SetUIOnLevelEnd();
             Invoke("CallLevelFailed", 1);
         }

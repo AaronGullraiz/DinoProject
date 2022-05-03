@@ -18,7 +18,7 @@ public class AttackingDino : DinoBase
         if (isWalkingToPlayer)
         {
             SetAnimationState(DinoAnimState.BITE);
-            DinosManager.Instance.DinoAttackedPlayer();
+            DinosManager.Instance.DinoAttackedPlayer(this);
             StopDino();
         }
         else if (isLastPointReached())
@@ -37,11 +37,16 @@ public class AttackingDino : DinoBase
     public override void OnOtherDinoHit()
     {
         SetAnimationState(DinoAnimState.BITE);
-        Invoke("StartMoving", 4);
+        Invoke("StartMoving", 2.5f);
     }
 
     private void StartMoving()
     {
         base.SetNavmeshTarget(waypoints[0]);
+    }
+
+    protected override void OnDinoBulletHit()
+    {
+        Invoke("StartMoving", 4);
     }
 }
