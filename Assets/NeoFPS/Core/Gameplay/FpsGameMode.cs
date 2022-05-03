@@ -124,12 +124,13 @@ namespace NeoFPS
                 // Spawn character
                 // (spawning will set controller to player which will trigger event handlers, so don't need to set playerCharacter here)
                 ICharacter spawned = SpawnManager.SpawnCharacter(prototype, player, false, scene);
-                if (OnCharacterSpawnedEvent != null)
-                {
-                    OnCharacterSpawnedEvent(spawned.gameObject);
-                }
                 if (spawned == null)
                     Debug.LogError("No valid spawn points found");
+                else
+                    if (OnCharacterSpawnedEvent != null)
+                    {
+                        OnCharacterSpawnedEvent(spawned.gameObject);
+                    }
             }
             else
             {

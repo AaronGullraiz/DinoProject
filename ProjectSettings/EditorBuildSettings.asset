@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: eb63dd340373023419aa5c95c6ae6f6e
   - enabled: 1
-    path: Assets/Scenes/DinoScene/Dino Hunter 2.unity
+    path: Assets/Scenes/GameplayScenes/ForestScene/ForestScene.unity
     guid: 9db224c791372c44b95ded2eeee66967
+  - enabled: 1
+    path: Assets/Scenes/GameplayScenes/DesertScene/DesertScene.unity
+    guid: f1923f0e557d35e4bab58be9ae891f45
+  - enabled: 1
+    path: Assets/Scenes/GameplayScenes/SnowScene/SnowScene.unity
+    guid: b7b054c7758ec81428289c2474a7c464
   m_configObjects: {}

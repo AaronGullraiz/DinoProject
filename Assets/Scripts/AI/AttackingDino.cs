@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackingDino : DinoBase
 {
-
     private bool isWalkingToPlayer = false;
 
     private void Start()
@@ -18,7 +17,7 @@ public class AttackingDino : DinoBase
         if (isWalkingToPlayer)
         {
             SetAnimationState(DinoAnimState.BITE);
-            DinosManager.Instance.DinoAttackedPlayer(this);
+            LevelsManager.Instance.dinosManager.DinoAttackedPlayer(this);
             StopDino();
         }
         else if (isLastPointReached())
@@ -31,7 +30,7 @@ public class AttackingDino : DinoBase
     {
         isWalkingToPlayer = true;
         SetNavAgentStopingDistance(5);
-        SetNavmeshTarget(DinosManager.Instance.player.transform);
+        SetNavmeshTarget(LevelsManager.Instance.player.transform);
     }
 
     public override void OnOtherDinoHit()
@@ -42,7 +41,14 @@ public class AttackingDino : DinoBase
 
     private void StartMoving()
     {
-        base.SetNavmeshTarget(waypoints[0]);
+        if (waypoints.Length > 0)
+        {
+            base.SetNavmeshTarget(waypoints[0]);
+        }
+        else
+        {
+            base.SetNavmeshTarget(LevelsManager.Instance.player.transform);
+        }
     }
 
     protected override void OnDinoBulletHit()

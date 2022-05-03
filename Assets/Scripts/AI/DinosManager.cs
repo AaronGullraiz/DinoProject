@@ -4,34 +4,13 @@ using UnityEngine;
 
 public class DinosManager : MonoBehaviour
 {
-    public static DinosManager Instance;
-
-    public GameObject player;
     public List<DinoBase> dinos;
-
 
     private bool hasInformedOtherDino = false, hasLevelEnded;
 
-    private void OnEnable()
-    {
-        Instance = this;
-        NeoFPS.FpsGameMode.OnCharacterSpawnedEvent += FpsGameMode_OnCharacterSpawnedEvent;
-    }
-
-    private void FpsGameMode_OnCharacterSpawnedEvent(GameObject character)
-    {
-        player = character;
-    }
-
     void Start()
     {
-        HUD.Instance.UpdateDinoTargetCount(dinos.Count);
-    }
-
-    private void OnDisable()
-    {
-        Instance = null;
-        NeoFPS.FpsGameMode.OnCharacterSpawnedEvent -= FpsGameMode_OnCharacterSpawnedEvent;
+        LevelsManager.Instance.hud.UpdateDinoTargetCount(dinos.Count);
     }
 
     public void InformOthers(DinoBase dino)
@@ -64,16 +43,14 @@ public class DinosManager : MonoBehaviour
                 }
             }
 
-            HUD.Instance.SetUIOnLevelEnd();
+            LevelsManager.Instance.hud.SetUIOnLevelEnd();
             Invoke("CallLevelFailed", 1);
         }
     }
 
     private void CallLevelFailed()
     {
-        player.GetComponent<NeoFPS.BasicHealthManager>().AddDamage(120);
-        HUD.Instance.OnPlayerDead();
-        Invoke("ShowLevelFailed", 2);
+        LevelsManager.Instance.OnLevelFailed();
     }
 
     public void DinoDied(DinoBase dino)
@@ -86,22 +63,11 @@ public class DinosManager : MonoBehaviour
         {
             dinos.Remove(dino);
         }
-        HUD.Instance.UpdateDinoTargetCount(dinos.Count);
+        LevelsManager.Instance.hud.UpdateDinoTargetCount(dinos.Count);
         if(dinos.Count == 0)
         {
             hasLevelEnded = true;
-            HUD.Instance.SetUIOnLevelEnd();
-            Invoke("ShowLevelComplete", 5);
+            LevelsManager.Instance.OnLevelComplete();
         }
-    }
-
-    private void ShowLevelComplete()
-    {
-        GameManager.Instance.ChangeGameState(GameState.LEVEL_COMPLETE);
-    }
-
-    private void ShowLevelFailed()
-    {
-        GameManager.Instance.ChangeGameState(GameState.LEVEL_FAIL);
     }
 }

@@ -17,11 +17,11 @@ public static class PreferenceManager
     {
         get
         {
-            return PlayerPrefs.GetFloat(Utilities.TOUCHPAD_SENSITIVITY, 0.5f);
+            return PlayerPrefs.GetFloat("TOUCHPAD_SENSITIVITY", 0.5f);
         }
         set
         {
-            PlayerPrefs.SetFloat(Utilities.TOUCHPAD_SENSITIVITY, value);
+            PlayerPrefs.SetFloat("TOUCHPAD_SENSITIVITY", value);
         }
     }
 
@@ -29,11 +29,23 @@ public static class PreferenceManager
     {
         get
         {
-            return PlayerPrefs.GetInt(Utilities.GRAPHIC_SETTINGS, 2);
+            return PlayerPrefs.GetInt("GRAPHIC_SETTINGS", 2);
         }
         set
         {
-            PlayerPrefs.SetInt(Utilities.GRAPHIC_SETTINGS, value);
+            PlayerPrefs.SetInt("GRAPHIC_SETTINGS", value);
+        }
+    }
+
+    public static int UnlockedLevels
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("Levels", 1);
+        }
+        set
+        {
+            PlayerPrefs.SetInt("Levels", value);
         }
     }
 }

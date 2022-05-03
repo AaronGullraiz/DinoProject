@@ -20,10 +20,10 @@ public class MobileInputs : InputCharacterMotion
     protected override void UpdateInput()
     {
         //// Aim input
-        m_Aimer.HandleMouseInput(HUD.Instance.GetTouchpadValues());
+        m_Aimer.HandleMouseInput(LevelsManager.Instance.hud.GetTouchpadValues());
 
         // Movement input
-        Vector2 move = HUD.Instance.GetJoystickValues();
+        Vector2 move = LevelsManager.Instance.hud.GetJoystickValues();
 
         float mag = Mathf.Clamp01(move.magnitude);
         if (mag > Mathf.Epsilon)

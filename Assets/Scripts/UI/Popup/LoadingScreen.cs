@@ -30,7 +30,7 @@ public class LoadingScreen : PopupBase
         }
         fillerImage.fillAmount = 1;
         yield return new WaitForSeconds(2);
-        if (Utilities.loadingSceneName == Utilities.GAMEPLAY_SCENE_NAME)
+        if (Utilities.loadingSceneName.Contains("GAMEPLAY_SCENE_NAME"))
         {
             GameManager.Instance.ChangeGameState(GameState.GAMEPLAY);
         }

@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public static HUD Instance;
-
     #region Attributes
     [SerializeField]
     private ETCJoystick joystick;
@@ -38,11 +36,6 @@ public class HUD : MonoBehaviour
 
     private NeoFPS.InputFirearm gun;
 
-    void Awake()
-    {
-        Instance = this;
-    }
-
     #region Utilities
 
     public void UpdateDinoTargetCount(int count)
@@ -68,6 +61,10 @@ public class HUD : MonoBehaviour
     {
         GetComponent<CanvasGroup>().alpha = 0;
         GetComponent<CanvasGroup>().interactable = false;
+        if (isAiming)
+        {
+            OnAimBtnPressed();
+        }
     }
 
     public Vector2 GetJoystickValues()

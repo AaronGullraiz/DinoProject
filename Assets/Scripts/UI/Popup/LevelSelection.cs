@@ -1,9 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSelection : PopupBase
 {
+    public GameObject levelsPanel;
+    private Button[] buttons;
+
+    void Start()
+    {
+        buttons = levelsPanel.GetComponentsInChildren<Button>();
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (i < PreferenceManager.UnlockedLevels)
+            {
+                buttons[i].transform.GetChild(3).gameObject.SetActive(false);
+            }
+        }
+    }
+
     public void ButtonClickEvent(string buttonName)
     {
         switch (buttonName)
@@ -45,7 +61,6 @@ public class LevelSelection : PopupBase
     public void OnLevelButtonClicked(int levelNo)
     {
         Utilities.currentSelectedLevel = levelNo;
-        Utilities.loadingSceneName = Utilities.GAMEPLAY_SCENE_NAME;
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }
 

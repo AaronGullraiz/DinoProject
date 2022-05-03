@@ -33,7 +33,6 @@ public class PausePopup : PopupBase
                 }
             case "Restart":
                 {
-                    Utilities.loadingSceneName = Utilities.GAMEPLAY_SCENE_NAME;
                     GameManager.Instance.ChangeGameState(GameState.LOADING);
                     break;
                 }

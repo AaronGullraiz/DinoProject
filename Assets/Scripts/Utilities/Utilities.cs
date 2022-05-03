@@ -4,12 +4,15 @@ using UnityEngine;
 
 public static class Utilities
 {
+    public static int TOTAL_LEVELS = 6;
     public static float BULLET_HIT_HEALTH_DECREASE = 35;
 
-    public static string loadingSceneName = GAMEPLAY_SCENE_NAME;
+    public static string loadingSceneName = FOREST_GAMEPLAY_SCENE_NAME;
 
     public const string MAIN_MENU_SCENE_NAME = "MainMenu";
-    public const string GAMEPLAY_SCENE_NAME = "Dino Hunter 2";
+    public const string FOREST_GAMEPLAY_SCENE_NAME = "ForestScene";
+    public const string SNOW_GAMEPLAY_SCENE_NAME = "SnowScene";
+    public const string DESERT_GAMEPLAY_SCENE_NAME = "DesertScene";
 
     public static GameplayMode selectedGameplayMode = GameplayMode.FOREST;
     public static int currentSelectedLevel = 1;
@@ -33,11 +36,6 @@ public static class Utilities
 #endif
         }
     }
-
-    #region PlayerPrefs
-    public const string TOUCHPAD_SENSITIVITY = "TOUCHPAD_SENSITIVITY";
-    public const string GRAPHIC_SETTINGS = "GRAPHIC_SETTINGS";
-    #endregion
 }
 
 [System.Serializable]

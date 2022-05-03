@@ -29,6 +29,8 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     private float dinoHealthDamageMultiplier = 0.25f;
     [SerializeField]
     private float dinoHealthValue;
+    [SerializeField]
+    private float hitWaitTime = 4;
 
     public Transform[] waypoints;
 
@@ -45,7 +47,6 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     private bool isHit = false;
     private bool isStopped = false;
 
-    private float hitWaitTime = 2;
     private float hitWait;
 
     #endregion
@@ -203,7 +204,7 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
             SetAnimationState(DinoAnimState.DEATH);
             if (informOthers)
             {
-                DinosManager.Instance.InformOthers(this);
+                LevelsManager.Instance.dinosManager.InformOthers(this);
             }
             BehaviourAfterHit();
         }
@@ -267,17 +268,17 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     {
         if (isAlive)
         {
-            hitWait = 4;
+            hitWait = hitWaitTime;
             isHit = true;
-            DinosManager.Instance.InformOthers(this);
+            LevelsManager.Instance.dinosManager.InformOthers(this);
             dinoHealthValue -= (damage * dinoHealthDamageMultiplier);
-            HUD.Instance.UpdateDinoFillerValue(dinoHealthValue);
+            LevelsManager.Instance.hud.UpdateDinoFillerValue(dinoHealthValue);
             if (dinoHealthValue <= 0)
             {
                 isAlive = false;
                 SetAnimationState(DinoAnimState.DEATH);
                 StopDino();
-                DinosManager.Instance.DinoDied(this);
+                LevelsManager.Instance.dinosManager.DinoDied(this);
                 return;
             }
             else

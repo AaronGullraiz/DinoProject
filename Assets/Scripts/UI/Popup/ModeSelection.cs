@@ -28,18 +28,21 @@ public class ModeSelection : PopupBase
                 }
             case "Mode1":
                 {
+                    Utilities.loadingSceneName = Utilities.FOREST_GAMEPLAY_SCENE_NAME;
                     Utilities.selectedGameplayMode = GameplayMode.FOREST;
                     GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
                     break;
                 }
             case "Mode2":
                 {
+                    Utilities.loadingSceneName = Utilities.SNOW_GAMEPLAY_SCENE_NAME;
                     Utilities.selectedGameplayMode = GameplayMode.SNOW;
                     GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
                     break;
                 }
             case "Mode3":
                 {
+                    Utilities.loadingSceneName = Utilities.DESERT_GAMEPLAY_SCENE_NAME;
                     Utilities.selectedGameplayMode = GameplayMode.DESERT;
                     GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
                     break;
