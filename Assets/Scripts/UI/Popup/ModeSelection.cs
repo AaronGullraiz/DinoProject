@@ -4,6 +4,7 @@ public class ModeSelection : PopupBase
 {
     public void OnButtonClickEvent(string btn)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (btn)
         {
             case "Energy":

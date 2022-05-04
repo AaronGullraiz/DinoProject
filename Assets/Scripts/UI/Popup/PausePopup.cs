@@ -4,20 +4,25 @@ using UnityEngine.UI;
 public class PausePopup : PopupBase
 {
     [SerializeField]
+    private GameObject soundOn, soundOff, musicOn, musicOff;
+
+    [SerializeField]
     private Slider slider;
 
     [SerializeField]
-    public GameObject[] graphicSettingsCheckMarks;
+    private GameObject[] graphicSettingsCheckMarks;
 
     private void Start()
     {
         slider.maxValue = 0.5f;
         slider.value = PreferenceManager.touchpadSensitivity;
         UpdateGraphicSettingsMarkers(PreferenceManager.GraphicSettings);
+        UpdateSoundMusicButtonStatus();
     }
 
     public void OnButtonClickEvent(string btn)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch(btn)
         {
             case "Resume":
@@ -38,10 +43,16 @@ public class PausePopup : PopupBase
                 }
             case "Sound":
                 {
+                    PreferenceManager.isSoundOn = !PreferenceManager.isSoundOn;
+                    UpdateSoundMusicButtonStatus();
+                    SoundsManager.Instance.UpdateSoundMusicStatus();
                     break;
                 }
             case "Music":
                 {
+                    PreferenceManager.isMusicOn = !PreferenceManager.isMusicOn;
+                    UpdateSoundMusicButtonStatus();
+                    SoundsManager.Instance.UpdateSoundMusicStatus();
                     break;
                 }
             case "Graphic_Low":
@@ -84,6 +95,14 @@ public class PausePopup : PopupBase
     public void OnSensitivityValueChanged()
     {
         PreferenceManager.touchpadSensitivity = slider.value;
+    }
+
+    private void UpdateSoundMusicButtonStatus()
+    {
+        soundOn.SetActive(PreferenceManager.isSoundOn);
+        soundOff.SetActive(!PreferenceManager.isSoundOn);
+        musicOn.SetActive(PreferenceManager.isMusicOn);
+        musicOff.SetActive(!PreferenceManager.isMusicOn);
     }
 
     private void UpdateGraphicSettingsMarkers(int index)

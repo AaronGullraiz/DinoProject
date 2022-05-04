@@ -6,6 +6,7 @@ public class GameQuit : PopupBase
 {
     public void OnButtonPressed(string btn)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (btn)
         {
             case "Yes":

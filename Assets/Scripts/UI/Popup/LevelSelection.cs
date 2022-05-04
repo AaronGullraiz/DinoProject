@@ -22,6 +22,7 @@ public class LevelSelection : PopupBase
 
     public void ButtonClickEvent(string buttonName)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (buttonName)
         {
             case "IAPStore":
@@ -60,6 +61,7 @@ public class LevelSelection : PopupBase
 
     public void OnLevelButtonClicked(int levelNo)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         Utilities.currentSelectedLevel = levelNo;
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }

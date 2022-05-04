@@ -17,6 +17,7 @@ public abstract class PopupBase : MonoBehaviour
 
     public virtual void OnBackButtonPressed()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         GameManager.Instance.BackState();
         Destroy(gameObject);
     }

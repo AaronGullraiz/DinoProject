@@ -48,4 +48,28 @@ public static class PreferenceManager
             PlayerPrefs.SetInt("Levels", value);
         }
     }
+
+    public static bool isSoundOn
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("SOUND", 1) == 1;
+        }
+        set
+        {
+            PlayerPrefs.SetInt("SOUND", value?1:0);
+        }
+    }
+
+    public static bool isMusicOn
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("MUSIC", 1) == 1;
+        }
+        set
+        {
+            PlayerPrefs.SetInt("MUSIC", value ? 1 : 0);
+        }
+    }
 }

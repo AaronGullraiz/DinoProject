@@ -4,24 +4,39 @@ using UnityEngine;
 
 public class LevelCompletePopup : PopupBase
 {
+    public GameObject nextButton;
+
+    private void Start()
+    {
+        if (Utilities.currentSelectedLevel >= Utilities.TOTAL_LEVELS)
+        {
+            nextButton.SetActive(false);
+        }
+    }
+
     public void OnHomeButtonPressed()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         Utilities.loadingSceneName = Utilities.MAIN_MENU_SCENE_NAME;
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }
 
     public void OnRestartButtonPressed()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }
 
     public void OnNextButtonPressed()
     {
+        Utilities.currentSelectedLevel++;
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }
 
     public void ButtonClickEvent(string buttonName)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (buttonName)
         {
             case "IAPStore":

@@ -6,6 +6,7 @@ public class InventoryPopup : PopupBase
 {
     public void ButtonClickEvent(string buttonName)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (buttonName)
         {
             case "Equip":

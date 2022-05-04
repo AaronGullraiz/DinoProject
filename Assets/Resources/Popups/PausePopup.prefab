@@ -3051,6 +3051,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupState: 7
+  soundOn: {fileID: 8439014988649482901}
+  soundOff: {fileID: 8439014990229094779}
+  musicOn: {fileID: 8439014989960389598}
+  musicOff: {fileID: 8439014988391548746}
   slider: {fileID: 6354350392608643711}
   graphicSettingsCheckMarks:
   - {fileID: 8439014989631331367}

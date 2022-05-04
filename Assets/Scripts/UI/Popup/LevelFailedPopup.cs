@@ -6,6 +6,7 @@ public class LevelFailedPopup : PopupBase
 {
     public void OnButtonClickEvent(string btn)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (btn)
         {
             case "Home":

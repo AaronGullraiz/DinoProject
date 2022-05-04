@@ -6,6 +6,7 @@ public class IAPStorePopup : PopupBase
 {
     public void ButtonClickEvent(string buttonName)
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         switch (buttonName)
         {
             case "IAPStore":

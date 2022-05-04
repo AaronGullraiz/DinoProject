@@ -89,11 +89,13 @@ public class HUD : MonoBehaviour
 
     public void OnPausePressed()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         GameManager.Instance.ChangeGameState(GameState.PAUSED);
     }
 
     public void OnCrouchPressed()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         isCrouch = !isCrouch;
         crouchButton.sprite = isCrouch? standSprite:crouchSprite;
         MobileInputs.Instance.OnCrouch(isCrouch);
@@ -110,6 +112,7 @@ public class HUD : MonoBehaviour
 
     public void OnAimBtnPressed()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         if (gun == null)
         {
             gun = FindObjectOfType<NeoFPS.InputFirearm>();
@@ -121,6 +124,7 @@ public class HUD : MonoBehaviour
 
     public void OnReloadBtnClicked()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         if (gun == null)
         {
             gun = FindObjectOfType<NeoFPS.InputFirearm>();
@@ -130,6 +134,7 @@ public class HUD : MonoBehaviour
 
     public void OnToggleFlash()
     {
+        SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         isFlashing = !isFlashing;
         flashButton.color = isFlashing ? Color.red : Color.white;
         if (gun == null)

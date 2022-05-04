@@ -38,6 +38,7 @@ public class LevelsManager : MonoBehaviour
     {
         if (PreferenceManager.UnlockedLevels <= Utilities.currentSelectedLevel)
         {
+            ToastHandler.Instance.ShowToast("New Level Unlocked");
             PreferenceManager.UnlockedLevels++;
         }
         hud.SetUIOnLevelEnd();

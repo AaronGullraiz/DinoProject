@@ -45,6 +45,13 @@ public class MenusData
     public string menuName;
 }
 
+[System.Serializable]
+public class SoundClipData
+{
+    public SoundClip clipName;
+    public AudioClip clip;
+}
+
 public enum GameplayMode
 {
     FOREST,SNOW,DESERT
@@ -81,4 +88,17 @@ public enum GameState
     LOADING,
     PROFILE,
     MODESELECTION,
+}
+
+public enum SoundClip
+{
+    BUTTONCLICK,
+    LEVEL_COMPLETE,
+    LEVEL_FAILED,
+    DINO_KILLED,
+    FIRE,
+    RELOAD,
+    AIM,
+    PLAYER_DIED,
+    REWARDED,
 }
