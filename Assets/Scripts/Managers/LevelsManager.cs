@@ -41,6 +41,8 @@ public class LevelsManager : MonoBehaviour
             ToastHandler.Instance.ShowToast("New Level Unlocked");
             PreferenceManager.UnlockedLevels++;
         }
+        PreferenceManager.Coins += 100;
+        MenusManager.Instance.UpdateUI();
         hud.SetUIOnLevelEnd();
         Invoke("ShowLevelComplete", 5);
     }
@@ -54,6 +56,8 @@ public class LevelsManager : MonoBehaviour
     {
         player.GetComponent<NeoFPS.BasicHealthManager>().AddDamage(120);
         hud.OnPlayerDead();
+        PreferenceManager.Coins += 50;
+        MenusManager.Instance.UpdateUI();
         Invoke("ShowLevelFailed", 2);
     }
 

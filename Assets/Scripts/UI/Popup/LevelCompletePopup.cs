@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelCompletePopup : PopupBase
 {
     public GameObject nextButton;
 
+    public Text rewardText, totalText;
+    public Text coinsText, cashText;
+
     private void Start()
     {
+        base.Start();
         if (Utilities.currentSelectedLevel >= Utilities.TOTAL_LEVELS)
         {
             nextButton.SetActive(false);
         }
+
+        rewardText.text = 100 + "";
+        totalText.text = 100 + "";
     }
 
     public void OnHomeButtonPressed()
@@ -72,5 +80,11 @@ public class LevelCompletePopup : PopupBase
     public override void OnBackButtonPressed()
     {
         OnRestartButtonPressed();
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

@@ -6,6 +6,13 @@ public abstract class PopupBase : MonoBehaviour
 {
     public GameState popupState;
 
+    private bool isPopupClosed;
+
+    protected void Start()
+    {
+        UpdateUI();
+    }
+
     private void Update()
     {
         // Back pressed
@@ -15,10 +22,24 @@ public abstract class PopupBase : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        if(!isPopupClosed)
+            MenusManager.Instance.OnPopupClosed();
+    }
+
     public virtual void OnBackButtonPressed()
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         GameManager.Instance.BackState();
         Destroy(gameObject);
     }
+
+    public void ClosePopup()
+    {
+        isPopupClosed = true;
+        Destroy(gameObject);
+    }
+
+    public abstract void UpdateUI();
 }

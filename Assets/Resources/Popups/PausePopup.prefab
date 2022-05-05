@@ -3060,6 +3060,8 @@ MonoBehaviour:
   - {fileID: 8439014989631331367}
   - {fileID: 8439014988620437240}
   - {fileID: 8439014988345374995}
+  coinsText: {fileID: 8439014988384526660}
+  cashText: {fileID: 8439014988564459396}
 --- !u!1 &8439014989430924579
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryPopup : PopupBase
 {
+    public Text coinsText, cashText;
     public void ButtonClickEvent(string buttonName)
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
@@ -53,5 +54,11 @@ public class InventoryPopup : PopupBase
             default:
                 break;
         }
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

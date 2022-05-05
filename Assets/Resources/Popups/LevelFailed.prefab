@@ -2128,6 +2128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupState: 5
+  coinsText: {fileID: 1115899145018948208}
+  cashText: {fileID: 1281628338434878601}
+  rewardText: {fileID: 6536013574790471428}
+  totalText: {fileID: 2899737926341496056}
 --- !u!1 &4139902248108026233
 GameObject:
   m_ObjectHideFlags: 0

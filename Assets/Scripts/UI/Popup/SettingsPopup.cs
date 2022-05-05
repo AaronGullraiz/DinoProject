@@ -11,6 +11,8 @@ public class SettingsPopup : PopupBase
 
     [SerializeField]
     private GameObject[] graphicSettingsCheckMarks;
+    [SerializeField]
+    private Text coinsText, cashText;
 
     private void Start()
     {
@@ -102,5 +104,11 @@ public class SettingsPopup : PopupBase
                 graphicSettingsCheckMarks[i].SetActive(false);
             }
         }
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

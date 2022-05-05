@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class LevelSelection : PopupBase
 {
     public GameObject levelsPanel;
+    public Text coinsText, cashText;
     private Button[] buttons;
 
     void Start()
     {
+        base.Start();
         buttons = levelsPanel.GetComponentsInChildren<Button>();
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -66,4 +68,9 @@ public class LevelSelection : PopupBase
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }
 
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
+    }
 }

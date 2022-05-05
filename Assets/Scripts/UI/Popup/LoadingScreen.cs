@@ -40,4 +40,8 @@ public class LoadingScreen : PopupBase
         }
         Destroy(gameObject);
     }
+
+    public override void UpdateUI()
+    {
+    }
 }

@@ -4604,6 +4604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupState: 2
   levelsPanel: {fileID: 1509466366567419706}
+  coinsText: {fileID: 8439014988384526660}
+  cashText: {fileID: 8439014988564459396}
 --- !u!1 &8439014989430924579
 GameObject:
   m_ObjectHideFlags: 0

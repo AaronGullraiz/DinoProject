@@ -21,4 +21,8 @@ public class GameQuit : PopupBase
                 }
         }
     }
+
+    public override void UpdateUI()
+    {
+    }
 }

@@ -1282,6 +1282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupState: 0
+  coinsText: {fileID: 487347931}
+  cashText: {fileID: 227818213}
 --- !u!1 &859885022
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,13 @@ public class MenusManager : MonoBehaviour
 {
     public MenusData[] menuDataList;
 
+    public static MenusManager Instance;
+
+    private PopupBase activePopup;
+
     private void OnEnable()
     {
+        Instance = this;
         DontDestroyOnLoad(this.gameObject);
         GameManager.OnStateChangedEvent += GameManager_OnStateChangedEvent;
     }
@@ -21,10 +26,22 @@ public class MenusManager : MonoBehaviour
     {
         foreach (var menu in menuDataList)
         {
-            if(menu.menuState == state)
+            if (menu.menuState == state)
             {
-                Instantiate(Resources.Load("Popups/" + menu.menuName));
+                if(activePopup)
+                    activePopup.ClosePopup();
+                activePopup = (Instantiate(Resources.Load("Popups/" + menu.menuName)) as GameObject).GetComponent<PopupBase>();
             }
         }
+    }
+
+    public void OnPopupClosed()
+    {
+        activePopup = null;
+    }
+
+    public void UpdateUI()
+    {
+        activePopup.UpdateUI();
     }
 }

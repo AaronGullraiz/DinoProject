@@ -37,6 +37,30 @@ public static class PreferenceManager
         }
     }
 
+    public static int Coins
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("COINS", 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt("COINS", value);
+        }
+    }
+
+    public static int Cash
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("CASH", 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt("CASH", value);
+        }
+    }
+
     public static int UnlockedLevels
     {
         get

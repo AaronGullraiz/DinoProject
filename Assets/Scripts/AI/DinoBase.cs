@@ -171,6 +171,12 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
         //currentTarget = (currentTarget + 1) % waypoints.Length;
     }
 
+    protected void StartMovingToFirstPoint()
+    {
+        currentTarget = 0;
+        SetNavmeshTarget(waypoints[currentTarget]);
+    }
+
     public void StopDino(bool isForcedStop = false)
     {
         isStopped = true;

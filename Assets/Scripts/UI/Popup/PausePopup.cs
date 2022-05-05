@@ -12,6 +12,9 @@ public class PausePopup : PopupBase
     [SerializeField]
     private GameObject[] graphicSettingsCheckMarks;
 
+    [SerializeField]
+    private Text coinsText, cashText;
+
     private void Start()
     {
         slider.maxValue = 0.5f;
@@ -118,5 +121,11 @@ public class PausePopup : PopupBase
                 graphicSettingsCheckMarks[i].SetActive(false);
             }
         }
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

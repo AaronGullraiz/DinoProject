@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuPopup : PopupBase
 {
+    public Text coinsText, cashText;
+
+    private void Start()
+    {
+        base.Start();
+    }
+
     public void ButtonClickEvent(string buttonName)
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
@@ -63,5 +71,11 @@ public class MainMenuPopup : PopupBase
     public override void OnBackButtonPressed()
     {
         GameManager.Instance.ChangeGameState(GameState.GAMEQUIT);
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

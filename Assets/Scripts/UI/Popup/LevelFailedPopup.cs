@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelFailedPopup : PopupBase
 {
+    [SerializeField]
+    private Text coinsText, cashText, rewardText, totalText;
+
+    private void Start()
+    {
+        base.Start();
+        rewardText.text = "50";
+        totalText.text = "50";
+    }
+
     public void OnButtonClickEvent(string btn)
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
@@ -53,5 +64,11 @@ public class LevelFailedPopup : PopupBase
     public override void OnBackButtonPressed()
     {
         OnRestartButtonPressed();
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

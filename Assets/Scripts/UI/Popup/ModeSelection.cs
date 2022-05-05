@@ -1,7 +1,8 @@
-using UnityEngine;
+using UnityEngine.UI;
 
 public class ModeSelection : PopupBase
 {
+    public Text coinsText, cashText;
     public void OnButtonClickEvent(string btn)
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
@@ -49,5 +50,11 @@ public class ModeSelection : PopupBase
                     break;
                 }
         }
+    }
+
+    public override void UpdateUI()
+    {
+        coinsText.text = PreferenceManager.Coins.ToString();
+        cashText.text = PreferenceManager.Cash.ToString();
     }
 }

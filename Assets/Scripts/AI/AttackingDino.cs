@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AttackingDino : DinoBase
 {
+    [SerializeField]
+    private bool shouldLoopWaypoints = false;
     private bool isWalkingToPlayer = false;
 
     private void Start()
@@ -22,7 +24,14 @@ public class AttackingDino : DinoBase
         }
         else if (isLastPointReached())
         {
-            Invoke("WalkTowardsPlayer", 3);
+            if (shouldLoopWaypoints)
+            {
+                StartMovingToFirstPoint();
+            }
+            else
+            {
+                Invoke("WalkTowardsPlayer", 3);
+            }
         }
     }
 

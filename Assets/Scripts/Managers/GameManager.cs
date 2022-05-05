@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     private Stack<GameState> gameStateStack;
 
+    private GameState previousState = GameState.MAINMENU;
+
     public delegate void OnStateChanged(GameState state);
     public static event OnStateChanged OnStateChangedEvent;
 
@@ -25,8 +27,16 @@ public class GameManager : MonoBehaviour
 
     public void ChangeGameState(GameState state)
     {
-        OnStateChangedEvent(state);
-        gameStateStack.Push(state);
+        if (state == previousState)
+        {
+            BackState();
+        }
+        else
+        {
+            previousState = GetCurrentState();
+            gameStateStack.Push(state);
+            OnStateChangedEvent(state);
+        }
     }
 
     public GameState GetCurrentState()
