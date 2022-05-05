@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     #region Attributes
+
     [SerializeField]
     private ETCJoystick joystick;
     [SerializeField]
@@ -37,7 +38,6 @@ public class HUD : MonoBehaviour
     private NeoFPS.InputFirearm gun;
 
     #region Utilities
-
     public void UpdateDinoTargetCount(int count)
     {
         dinoTargetCountTxt.text = count.ToString();

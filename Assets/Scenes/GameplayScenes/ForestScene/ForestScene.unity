@@ -55981,6 +55981,7 @@ GameObject:
   - component: {fileID: 2017300601}
   - component: {fileID: 2017300606}
   - component: {fileID: 2017300605}
+  - component: {fileID: 2017300607}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -56115,6 +56116,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2017300607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017300600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ae48105a52fb34fba11f2ce07340f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupState: 3
+  coinsText: {fileID: 1925282470}
+  cashText: {fileID: 2083272098}
 --- !u!1001 &2018266846
 PrefabInstance:
   m_ObjectHideFlags: 0

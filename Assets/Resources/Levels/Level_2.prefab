@@ -39,8 +39,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3696587967891982741}
-  - component: {fileID: 245190020800338676}
-  - component: {fileID: 1263192659879093919}
   - component: {fileID: 3863419297995088604}
   m_Layer: 0
   m_Name: brontosaurus
@@ -64,48 +62,6 @@ Transform:
   m_Father: {fileID: 7834403796453452224}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 30.43, z: 0}
---- !u!65 &245190020800338676
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472681090420328626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.20030114, y: 0.36807021, z: 1.2292852}
-  m_Center: {x: -0.030757802, y: 0.5620265, z: 1.30021}
---- !u!114 &1263192659879093919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472681090420328626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1199717247773336565}
-  collider: {fileID: 245190020800338676}
-  navAgent: {fileID: 3863419297995088604}
-  rotationSpeed: 100
-  runSpeed: 2
-  walkSpeed: 1
-  informOthers: 0
-  dinoHealthDamageMultiplier: 0.25
-  dinoHealthValue: 125
-  hitWaitTime: 2
-  waypoints:
-  - {fileID: 7834403798080864696}
-  - {fileID: 7834403797029640476}
-  - {fileID: 7834403798263177860}
-  - {fileID: 7834403797655852388}
-  - {fileID: 4035030010620464737}
-  shouldLoopWaypoints: 1
 --- !u!195 &3863419297995088604
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -174,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9db68020e14549830cb78c8eff3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinos: []
+  dinos:
+  - {fileID: 7434065509425729163}
 --- !u!1 &7834403797029640477
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,15 +462,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6402018278231445220, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6402018278231445220, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6402018278231445220, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402018278231445220, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6402018278231445222, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
       propertyPath: m_RootOrder
@@ -587,3 +548,51 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 3993013973194769023, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
   m_PrefabInstance: {fileID: 2867747836013994378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9157155882219270990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6402018278231544516, guid: 7d6f147282591484f9d39d826f6451cd, type: 3}
+  m_PrefabInstance: {fileID: 2867747836013994378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &7216832076046359270
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157155882219270990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c4a9c351dc194a7468c5366312e090d4, type: 3}
+--- !u!114 &7434065509425729163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157155882219270990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1199717247773336565}
+  collider: {fileID: 7216832076046359270}
+  navAgent: {fileID: 3863419297995088604}
+  rotationSpeed: 100
+  runSpeed: 2
+  walkSpeed: 1
+  informOthers: 0
+  dinoHealthDamageMultiplier: 0.25
+  dinoHealthValue: 125
+  hitWaitTime: 2
+  waypoints:
+  - {fileID: 7834403798080864696}
+  - {fileID: 7834403797029640476}
+  - {fileID: 7834403798263177860}
+  - {fileID: 7834403797655852388}
+  - {fileID: 4035030010620464737}
+  shouldLoopWaypoints: 1

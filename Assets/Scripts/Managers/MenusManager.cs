@@ -10,6 +10,8 @@ public class MenusManager : MonoBehaviour
 
     private PopupBase activePopup;
 
+    public PopupBase MainMenuPopup, HudPopup;
+
     private void OnEnable()
     {
         Instance = this;
@@ -42,6 +44,17 @@ public class MenusManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        activePopup.UpdateUI();
+        if (activePopup != null)
+        {
+            activePopup.UpdateUI();
+        }
+        if (MainMenuPopup != null)
+        {
+            MainMenuPopup.UpdateUI();
+        }
+        if (HudPopup != null)
+        {
+            HudPopup.UpdateUI();
+        }
     }
 }

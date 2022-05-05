@@ -10,6 +10,7 @@ public class MainMenuPopup : PopupBase
     private void Start()
     {
         base.Start();
+        MenusManager.Instance.MainMenuPopup = this;
     }
 
     public void ButtonClickEvent(string buttonName)
@@ -77,5 +78,10 @@ public class MainMenuPopup : PopupBase
     {
         coinsText.text = PreferenceManager.Coins.ToString();
         cashText.text = PreferenceManager.Cash.ToString();
+    }
+
+    private void OnDestroy()
+    {
+        MenusManager.Instance.MainMenuPopup = null;
     }
 }
