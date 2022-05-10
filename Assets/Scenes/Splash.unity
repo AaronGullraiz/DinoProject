@@ -963,3 +963,5 @@ MonoBehaviour:
     menuName: IAPStore
   - menuState: 11
     menuName: Profile
+  MainMenuPopup: {fileID: 0}
+  HudPopup: {fileID: 0}

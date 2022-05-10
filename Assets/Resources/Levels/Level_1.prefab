@@ -102,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834403797655852389}
   m_LocalRotation: {x: 0, y: 0.1848948, z: 0, w: 0.98275834}
-  m_LocalPosition: {x: -17.08, y: -23.24, z: -3.04}
+  m_LocalPosition: {x: -7.83, y: -23.24, z: -3.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7834403798209971732}
@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834403798263177861}
   m_LocalRotation: {x: -0, y: -0.21899472, z: -0, w: 0.97572607}
-  m_LocalPosition: {x: -6.97, y: -23.24, z: 2.47}
+  m_LocalPosition: {x: -5.14, y: -23.24, z: -3.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7834403798209971732}
@@ -375,6 +375,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7834403796453452224}
     m_Modifications:
+    - target: {fileID: 1343244584, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343244584, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 741734996731195895, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
       propertyPath: m_Name
       value: velociraptor
@@ -444,9 +452,33 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: maxWaitTimeToMove
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: minWaitTimeToMove
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
+      objectReference: {fileID: 7834403798080864696}
+    - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 7834403797029640476}
+    - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
       objectReference: {fileID: 7834403798263177860}
+    - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 7834403797655852388}
     - target: {fileID: 1523811899717200198, guid: 2e8a8f8c73e29b142b7385c15f21ba4d, type: 3}
       propertyPath: dinoHealthDamageMultiplier
       value: 0.5

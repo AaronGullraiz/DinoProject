@@ -11,6 +11,7 @@ public class AttackingDino : DinoBase
     private void Start()
     {
         base.Start();
+        shouldLoopWaypoints = true;
     }
 
     protected override void OnTargetReached()
@@ -18,7 +19,8 @@ public class AttackingDino : DinoBase
         base.OnTargetReached();
         if (isWalkingToPlayer)
         {
-            SetAnimationState(DinoAnimState.BITE);
+            //SetAnimationState(DinoAnimState.BITE);
+            SetAnimationTrigger("Bite");
             LevelsManager.Instance.dinosManager.DinoAttackedPlayer(this);
             StopDino();
         }
@@ -44,7 +46,9 @@ public class AttackingDino : DinoBase
 
     public override void OnOtherDinoHit()
     {
-        SetAnimationState(DinoAnimState.BITE);
+        shouldLoopWaypoints = false;
+        //SetAnimationState(DinoAnimState.BITE);
+        SetAnimationTrigger("Bite");
         Invoke("StartMoving", 2.5f);
     }
 
@@ -52,7 +56,7 @@ public class AttackingDino : DinoBase
     {
         if (waypoints.Length > 0)
         {
-            base.SetNavmeshTarget(waypoints[0]);
+            base.SetNavmeshTarget(waypoints[waypoints.Length-1]);
         }
         else
         {
@@ -62,6 +66,8 @@ public class AttackingDino : DinoBase
 
     protected override void OnDinoBulletHit()
     {
-        Invoke("StartMoving", 4);
+        StopMovingDino();
+        Invoke("WalkTowardsPlayer", 4);
+        shouldLoopWaypoints = false;
     }
 }

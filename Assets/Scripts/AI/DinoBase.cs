@@ -31,6 +31,8 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     private float dinoHealthValue;
     [SerializeField]
     private float hitWaitTime = 4;
+    [SerializeField]
+    private float minWaitTimeToMove = 1, maxWaitTimeToMove=4;
 
     public Transform[] waypoints;
 
@@ -46,6 +48,7 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     private bool isAlive = true;
     private bool isHit = false;
     private bool isStopped = false;
+    private bool isMovingToPlayer = false;
 
     private float hitWait;
 
@@ -54,6 +57,7 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     #region MonoBehaviour
     protected void Start()
     {
+        SetNavmeshTarget(waypoints[0]);
     }
     #endregion
 
@@ -63,6 +67,12 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
         currentAnimState = state;
         anim.SetInteger("State", (int)state);
     }
+
+    public void SetAnimationTrigger(string trigger)
+    {
+        anim.SetTrigger(trigger);
+    }
+
     #endregion
 
     #region NavMesh
@@ -75,6 +85,7 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
             if(NavMesh.SamplePosition(currentNavTarget.position, out hit, 1, NavMesh.AllAreas))
             {
                 navAgent.SetDestination(hit.position);
+                navAgent.isStopped = true;
             }
             if (routine != null)
             {
@@ -92,6 +103,11 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
 
     IEnumerator Move()
     {
+        if (!isMovingToPlayer)
+        {
+            var waitTime = Random.Range(minWaitTimeToMove, maxWaitTimeToMove);
+            yield return new WaitForSeconds(waitTime);
+        }
         yield return new WaitForEndOfFrame();
         while (isAlive)
         {
@@ -123,9 +139,11 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
 
     private bool Walk()
     {
-        if (navAgent.pathStatus == NavMeshPathStatus.PathComplete)
+        if (navAgent.pathStatus != NavMeshPathStatus.PathPartial)
         {
-            if (navAgent.remainingDistance > 4)
+            if(navAgent.isStopped)
+                navAgent.isStopped = false;
+            if (navAgent.remainingDistance > 8)
             {
                 navAgent.speed = runSpeed;
                 if (currentAnimState != DinoAnimState.RUN)
@@ -195,6 +213,19 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
             SetAnimationState(DinoAnimState.IDLE);
         }
     }
+
+    protected void StopMovingDino()
+    {
+        if (isAlive)
+        {
+            if (routine != null)
+            {
+                StopCoroutine(routine);
+            }
+            routine = null;
+            navAgent.isStopped=true;
+        }
+    }
     #endregion
 
     #region Collision
@@ -227,7 +258,8 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
 
     protected void AttackPlayer()
     {
-        SetAnimationState(DinoAnimState.BITE);
+        //SetAnimationState(DinoAnimState.BITE);
+            SetAnimationTrigger("Bite");
     }
 
     private void BehaviourAfterHit()
@@ -274,6 +306,7 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     {
         if (isAlive)
         {
+            isMovingToPlayer = true;
             hitWait = hitWaitTime;
             isHit = true;
             LevelsManager.Instance.dinosManager.InformOthers(this);
@@ -289,7 +322,8 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
             }
             else
             {
-                SetAnimationState(DinoAnimState.BITE);
+                //SetAnimationState(DinoAnimState.BITE);
+                SetAnimationTrigger("Bite");
                 OnDinoBulletHit();
             }
         }
