@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     private Stack<GameState> gameStateStack;
 
-    private GameState previousState = GameState.MAINMENU;
+    private Stack<GameState> previousState;
 
     public delegate void OnStateChanged(GameState state);
     public static event OnStateChanged OnStateChangedEvent;
@@ -22,18 +22,21 @@ public class GameManager : MonoBehaviour
 
             gameStateStack = new Stack<GameState>();
             gameStateStack.Push(GameState.MAINMENU);
+
+            previousState = new Stack<GameState>();
+            previousState.Push(GameState.MAINMENU);
         }
     }
 
     public void ChangeGameState(GameState state)
     {
-        if (state == previousState)
+        if (state == GetPreviousState)
         {
             BackState();
         }
         else
         {
-            previousState = GetCurrentState();
+            previousState.Push(GetCurrentState());
             gameStateStack.Push(state);
             OnStateChangedEvent(state);
         }
@@ -42,6 +45,14 @@ public class GameManager : MonoBehaviour
     public GameState GetCurrentState()
     {
         return gameStateStack.Peek();
+    }
+
+    public GameState GetPreviousState
+    {
+        get
+        {
+            return previousState.Peek();
+        }
     }
 
     public void BackState()
@@ -58,6 +69,8 @@ public class GameManager : MonoBehaviour
         else if (gameStateStack.Count > 0)
         {
             gameStateStack.Pop();
+            if(previousState.Count>0)
+                previousState.Pop();
             OnStateChangedEvent(GetCurrentState());
         }
     }

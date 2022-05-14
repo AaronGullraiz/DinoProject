@@ -52,12 +52,28 @@ public class EditorSceneHandler
         }
     }
 
-    [MenuItem("SceneHandler/Play _F5")]
-    static void Play()
+    [MenuItem("SceneLoader/PlayStop _F5")]
+    private static void PlayStopButton()
     {
-        if (!EditorApplication.isPlaying && EditorApplication.SaveCurrentSceneIfUserWantsTo())
+        if (!EditorApplication.isPlaying)
         {
-            
+            bool value = EditorApplication.SaveCurrentSceneIfUserWantsTo();
+            if (value)
+            {
+                EditorApplication.OpenScene(splashScenePath);
+                EditorApplication.ExecuteMenuItem("Edit/Play");
+            }
+        }
+
+    }
+
+
+    [MenuItem("SceneLoader/Pause _F6")]
+    private static void PauseButton()
+    {
+        if (EditorApplication.isPlaying)
+        {
+            EditorApplication.ExecuteMenuItem("Edit/Pause");
         }
     }
 }
