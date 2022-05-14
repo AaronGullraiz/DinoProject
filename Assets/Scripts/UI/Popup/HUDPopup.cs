@@ -24,4 +24,9 @@ public class HUDPopup : PopupBase
     {
         MenusManager.Instance.HudPopup = null;
     }
+
+    public override void OnBackButtonPressed()
+    {
+        GameManager.Instance.ChangeGameState(GameState.PAUSED);
+    }
 }
