@@ -35,7 +35,7 @@ public class EditorSceneHandler
             EditorSceneManager.OpenScene(forestGameplayScenePath);
         }
     }
-    [MenuItem("SceneHandler/Open SnowGameplay Scene &F4")]
+    [MenuItem("SceneHandler/Open SnowGameplay Scene #F4")]
     static void OpenSnowGameplayScene()
     {
         if (!EditorApplication.isPlaying && EditorApplication.SaveCurrentSceneIfUserWantsTo())
@@ -52,7 +52,7 @@ public class EditorSceneHandler
         }
     }
 
-    [MenuItem("SceneLoader/PlayStop _F5")]
+    [MenuItem("SceneHandler/PlayStop _F5")]
     private static void PlayStopButton()
     {
         if (!EditorApplication.isPlaying)
@@ -68,7 +68,7 @@ public class EditorSceneHandler
     }
 
 
-    [MenuItem("SceneLoader/Pause _F6")]
+    [MenuItem("SceneHandler/Pause _F6")]
     private static void PauseButton()
     {
         if (EditorApplication.isPlaying)
