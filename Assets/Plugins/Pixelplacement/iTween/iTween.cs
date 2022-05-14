@@ -6547,7 +6547,9 @@ public class iTween : MonoBehaviour
 				try {
 					loopType=(LoopType)Enum.Parse(typeof(LoopType),(string)tweenArguments["looptype"],true); 
 				} catch {
+					#if UNITY_EDITOR
 					Debug.LogWarning("iTween: Unsupported loopType supplied! Default will be used.");
+					#endif
 					loopType = iTween.LoopType.none;	
 				}
 			}			
