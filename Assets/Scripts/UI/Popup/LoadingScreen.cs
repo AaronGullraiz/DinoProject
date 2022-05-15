@@ -31,7 +31,6 @@ public class LoadingScreen : PopupBase
         }
         fillerImage.fillAmount = 1;
         yield return new WaitForSeconds(2);
-        Debug.LogError("Loaded: "+Utilities.loadingSceneName);
         if (Utilities.loadingSceneName.Equals(Utilities.FOREST_GAMEPLAY_SCENE_NAME) ||
             Utilities.loadingSceneName.Equals(Utilities.SNOW_GAMEPLAY_SCENE_NAME) ||
             Utilities.loadingSceneName.Equals(Utilities.DESERT_GAMEPLAY_SCENE_NAME))

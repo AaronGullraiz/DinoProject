@@ -48,11 +48,13 @@ public class SoundsManager : MonoBehaviour
             if (state == GameState.MAINMENU)
             {
                 bgMusicAudioSource.clip = menuMusic;
-                bgMusicAudioSource.Play();
             }
             else if (state == GameState.GAMEPLAY)
             {
                 bgMusicAudioSource.clip = gameplayMusic;
+            }
+            if (!bgMusicAudioSource.isPlaying)
+            {
                 bgMusicAudioSource.Play();
             }
         }
@@ -60,10 +62,12 @@ public class SoundsManager : MonoBehaviour
         if(state == GameState.LEVEL_COMPLETE)
         {
             PlaySound(SoundClip.LEVEL_COMPLETE);
+            bgMusicAudioSource.Stop();
         }
         else if (state == GameState.LEVEL_FAIL)
         {
             PlaySound(SoundClip.LEVEL_FAILED);
+            bgMusicAudioSource.Stop();
         }
     }
 

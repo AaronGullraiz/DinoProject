@@ -246,15 +246,15 @@ MonoBehaviour:
   bgMusicAudioSource: {fileID: 221509695}
   soundfxAudioSource: {fileID: 221509694}
   loopingSoundAudioSource: {fileID: 221509693}
-  menuMusic: {fileID: 0}
-  gameplayMusic: {fileID: 0}
+  menuMusic: {fileID: 8300000, guid: 3f881a509bc8a5645881622010b8b107, type: 3}
+  gameplayMusic: {fileID: 8300000, guid: 38f7379f16cd51048a09ee6a7d25951e, type: 3}
   clipsData:
   - clipName: 0
     clip: {fileID: 8300000, guid: 58760fb961160094cae6e0408bee2c93, type: 3}
   - clipName: 1
-    clip: {fileID: 8300000, guid: 58760fb961160094cae6e0408bee2c93, type: 3}
+    clip: {fileID: 8300000, guid: 3cbad372c6ded0841ba971d6e8aa2a85, type: 3}
   - clipName: 2
-    clip: {fileID: 8300000, guid: 58760fb961160094cae6e0408bee2c93, type: 3}
+    clip: {fileID: 8300000, guid: aa6a8683e088de74fb9a733ac337ef6c, type: 3}
 --- !u!82 &221509693
 AudioSource:
   m_ObjectHideFlags: 0
@@ -457,9 +457,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3f881a509bc8a5645881622010b8b107, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
