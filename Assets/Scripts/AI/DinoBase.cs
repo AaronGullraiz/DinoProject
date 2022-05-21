@@ -9,6 +9,9 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
     #region Attributes
 
     [SerializeField]
+    protected DinoSoundsHandler soundHandler;
+
+    [SerializeField]
     private Animator anim;
 
     [SerializeField]
@@ -172,6 +175,7 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
         if (isAlive)
         {
             SetAnimationState(DinoAnimState.IDLE);
+            soundHandler.PlayDinoSound(DinoSound.IDLE);
             if (!isLastPointReached())
             {
                 Invoke("WalkToNextTarget", 2);
@@ -308,12 +312,14 @@ public abstract class DinoBase : MonoBehaviour, IDamageHandler
         {
             isMovingToPlayer = true;
             hitWait = hitWaitTime;
+            soundHandler.PlayDinoSound(DinoSound.HURT);
             isHit = true;
             LevelsManager.Instance.dinosManager.InformOthers(this);
             dinoHealthValue -= (damage * dinoHealthDamageMultiplier);
             LevelsManager.Instance.hud.UpdateDinoFillerValue(dinoHealthValue);
             if (dinoHealthValue <= 0)
             {
+                soundHandler.PlayDinoSound(DinoSound.DEATH);
                 isAlive = false;
                 SetAnimationState(DinoAnimState.DEATH);
                 StopDino();

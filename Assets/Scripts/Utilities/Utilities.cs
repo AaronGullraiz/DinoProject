@@ -102,3 +102,11 @@ public enum SoundClip
     PLAYER_DIED,
     REWARDED,
 }
+
+public enum DinoSound
+{
+    IDLE,
+    HURT,
+    ATTACK,
+    DEATH,
+}

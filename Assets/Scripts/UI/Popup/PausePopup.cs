@@ -17,6 +17,7 @@ public class PausePopup : PopupBase
 
     private void Start()
     {
+        base.Start();
         slider.maxValue = 0.5f;
         slider.value = PreferenceManager.touchpadSensitivity;
         UpdateGraphicSettingsMarkers(PreferenceManager.GraphicSettings);

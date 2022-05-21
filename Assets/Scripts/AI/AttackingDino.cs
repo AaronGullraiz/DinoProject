@@ -22,6 +22,7 @@ public class AttackingDino : DinoBase
             //SetAnimationState(DinoAnimState.BITE);
             SetAnimationTrigger("Bite");
             LevelsManager.Instance.dinosManager.DinoAttackedPlayer(this);
+            soundHandler.PlayDinoSound(DinoSound.ATTACK);
             StopDino();
         }
         else if (isLastPointReached())
