@@ -437,6 +437,7 @@ public class AdCalls : MonoBehaviour, IUnityAdsListener
     }
     public void Admob_Unity()
     {
+#if !UNITY_EDITOR
         if (!IsValidSDK())
         {
             return;
@@ -484,6 +485,7 @@ public class AdCalls : MonoBehaviour, IUnityAdsListener
             }
 
         }
+#endif
     }
     public void Unity_Admob()
     {
@@ -632,7 +634,7 @@ public class AdCalls : MonoBehaviour, IUnityAdsListener
 
         }
     }
-    #endregion
+#endregion
     void RewardUser()
     {
         if (OnRewardCompleted != null)

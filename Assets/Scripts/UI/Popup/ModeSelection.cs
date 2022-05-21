@@ -1,8 +1,31 @@
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ModeSelection : PopupBase
 {
     public Text coinsText, cashText;
+
+    public GameObject[] snowModeLockItems, desertModeLockItems;
+
+    private void Start()
+    {
+        base.Start();
+
+        if (!PreferenceManager.GetModeStatus(GameplayMode.SNOW))
+        {
+            foreach (var item in snowModeLockItems)
+            {
+                item.SetActive(false);
+            }
+        }
+        if (!PreferenceManager.GetModeStatus(GameplayMode.DESERT))
+        {
+            foreach (var item in desertModeLockItems)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
     public void OnButtonClickEvent(string btn)
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
@@ -37,16 +60,30 @@ public class ModeSelection : PopupBase
                 }
             case "Mode2":
                 {
-                    Utilities.loadingSceneName = Utilities.SNOW_GAMEPLAY_SCENE_NAME;
-                    Utilities.selectedGameplayMode = GameplayMode.SNOW;
-                    GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
+                    if (!PreferenceManager.GetModeStatus(GameplayMode.SNOW))
+                    {
+                        Utilities.loadingSceneName = Utilities.SNOW_GAMEPLAY_SCENE_NAME;
+                        Utilities.selectedGameplayMode = GameplayMode.SNOW;
+                        GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
+                    }
+                    else
+                    {
+                        // show add
+                    }
                     break;
                 }
             case "Mode3":
                 {
-                    Utilities.loadingSceneName = Utilities.DESERT_GAMEPLAY_SCENE_NAME;
-                    Utilities.selectedGameplayMode = GameplayMode.DESERT;
-                    GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
+                    if (!PreferenceManager.GetModeStatus(GameplayMode.DESERT))
+                    {
+                        Utilities.loadingSceneName = Utilities.DESERT_GAMEPLAY_SCENE_NAME;
+                        Utilities.selectedGameplayMode = GameplayMode.DESERT;
+                        GameManager.Instance.ChangeGameState(GameState.LEVELSELECTION);
+                    }
+                    else
+                    {
+                        // show add
+                    }
                     break;
                 }
         }

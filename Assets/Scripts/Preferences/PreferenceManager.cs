@@ -96,4 +96,13 @@ public static class PreferenceManager
             PlayerPrefs.SetInt("MUSIC", value ? 1 : 0);
         }
     }
+
+    public static bool GetModeStatus(GameplayMode mode)
+    {
+        return PlayerPrefs.GetInt("MODE:"+ mode, 0) == 1;
+    }
+    public static void SetModeStatus(GameplayMode mode,bool value)
+    {
+        PlayerPrefs.SetInt("MODE:" + mode, value?1:0);
+    }
 }

@@ -20,6 +20,7 @@ public class LoadingScreen : PopupBase
 
     IEnumerator Loading()
     {
+        yield return new WaitForSeconds(2);
         while (fillerImage.fillAmount < 1)
         {
             fillerImage.fillAmount += Time.deltaTime*fillAmountMultiplier;
