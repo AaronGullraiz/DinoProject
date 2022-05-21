@@ -7,7 +7,7 @@ public class MainMenuPopup : PopupBase
 {
     public Text coinsText, cashText;
 
-    private void Start()
+    protected override void Start()
     {
         base.Start();
         MenusManager.Instance.MainMenuPopup = this;
@@ -20,6 +20,7 @@ public class MainMenuPopup : PopupBase
         {
             case "PlayBtn":
                 {
+                    this._adsManager.Admob_Unity();
                     GameManager.Instance.ChangeGameState(GameState.MODESELECTION);
                     break;
                 }

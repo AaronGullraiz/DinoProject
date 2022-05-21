@@ -8,8 +8,11 @@ public abstract class PopupBase : MonoBehaviour
 
     private bool isPopupClosed;
 
-    protected void Start()
+    protected AdCalls _adsManager;
+
+    protected virtual void Start()
     {
+        this._adsManager = AdCalls.instance;
         UpdateUI();
     }
 

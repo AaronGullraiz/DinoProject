@@ -8,9 +8,10 @@ public class LevelFailedPopup : PopupBase
     [SerializeField]
     private Text coinsText, cashText, rewardText, totalText;
 
-    private void Start()
+    protected override void Start()
     {
         base.Start();
+        this._adsManager.Admob_Unity();
         rewardText.text = "50";
         totalText.text = "50";
     }

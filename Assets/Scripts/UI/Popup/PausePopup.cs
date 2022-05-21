@@ -20,6 +20,7 @@ public class PausePopup : PopupBase
         slider.maxValue = 0.5f;
         slider.value = PreferenceManager.touchpadSensitivity;
         UpdateGraphicSettingsMarkers(PreferenceManager.GraphicSettings);
+        this._adsManager.Admob_Unity();
         UpdateSoundMusicButtonStatus();
     }
 
@@ -37,11 +38,13 @@ public class PausePopup : PopupBase
                 {
                     Utilities.loadingSceneName = Utilities.MAIN_MENU_SCENE_NAME;
                     GameManager.Instance.ChangeGameState(GameState.LOADING);
+                    this._adsManager.Admob_Unity();
                     break;
                 }
             case "Restart":
                 {
                     GameManager.Instance.ChangeGameState(GameState.LOADING);
+                    this._adsManager.Admob_Unity();
                     break;
                 }
             case "Sound":

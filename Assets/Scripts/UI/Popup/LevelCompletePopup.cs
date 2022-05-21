@@ -18,6 +18,7 @@ public class LevelCompletePopup : PopupBase
             nextButton.SetActive(false);
         }
 
+        this._adsManager.Admob_Unity();
         rewardText.text = 100 + "";
         totalText.text = 100 + "";
     }

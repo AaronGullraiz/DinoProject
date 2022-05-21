@@ -9,7 +9,7 @@ public class LevelSelection : PopupBase
     public Text coinsText, cashText;
     private Button[] buttons;
 
-    void Start()
+    protected override void Start()
     {
         base.Start();
         buttons = levelsPanel.GetComponentsInChildren<Button>();
@@ -65,6 +65,9 @@ public class LevelSelection : PopupBase
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
         Utilities.currentSelectedLevel = levelNo;
+
+        this._adsManager.Admob_Unity();
+
         GameManager.Instance.ChangeGameState(GameState.LOADING);
     }
 
