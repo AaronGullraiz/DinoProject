@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DinosManager : MonoBehaviour
 {
+    public GameObject endCinematicCam;
+
     public List<DinoBase> dinos;
 
     private bool hasInformedOtherDino = false, hasLevelEnded;
@@ -67,6 +69,8 @@ public class DinosManager : MonoBehaviour
         if(dinos.Count == 0)
         {
             hasLevelEnded = true;
+            endCinematicCam.GetComponent<EndCameraHandler>().SetTarget(dino.transform);
+            endCinematicCam.SetActive(true);
             LevelsManager.Instance.OnLevelComplete();
         }
     }

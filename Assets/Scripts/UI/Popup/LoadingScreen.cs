@@ -14,13 +14,13 @@ public class LoadingScreen : PopupBase
     {
         DontDestroyOnLoad(this.gameObject);
         fillerImage.fillAmount = 0;
-        operation = GameManager.Instance.LoadScene(Utilities.loadingSceneName);
         StartCoroutine(Loading());
     }
 
     IEnumerator Loading()
     {
         yield return new WaitForSeconds(2);
+        operation = GameManager.Instance.LoadScene(Utilities.loadingSceneName);
         while (fillerImage.fillAmount < 1)
         {
             fillerImage.fillAmount += Time.deltaTime*fillAmountMultiplier;

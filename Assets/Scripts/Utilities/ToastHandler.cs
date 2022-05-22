@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class ToastHandler : MonoBehaviour
 
     public static ToastHandler Instance;
 
+    private IEnumerator routine;
+
     private void Start()
     {
         if(Instance == null)
@@ -17,15 +20,23 @@ public class ToastHandler : MonoBehaviour
         }
     }
 
-    public void ShowToast(string text, float stayTime=2)
+    public void ShowToast(string text, float startDelay = 2, float stayTime=2)
     {
-        toastText.text = text;
-        toastObject.SetActive(true);
-        Invoke("HideToast", stayTime);
+        if(routine != null)
+        {
+            StopCoroutine(routine);
+        }
+        routine = Toast(text, startDelay, stayTime);
+        StartCoroutine(routine);
     }
 
-    private void HideToast()
+    IEnumerator Toast(string text, float startDelay, float stayTime)
     {
+        yield return new WaitForSeconds(startDelay);
+        toastText.text = text;
+        toastObject.SetActive(true);
+        yield return new WaitForSeconds(stayTime);
         toastObject.SetActive(false);
+        routine = null;
     }
 }

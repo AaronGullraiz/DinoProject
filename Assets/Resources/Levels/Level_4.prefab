@@ -1,5 +1,294 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1201951126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201951127}
+  - component: {fileID: 1201951129}
+  - component: {fileID: 1201951128}
+  m_Layer: 0
+  m_Name: EndCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1201951127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201951126}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7834403796453452224}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1201951129
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201951126}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 100
+  field of view: 50
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!114 &1201951128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201951126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed13e7523b10c4b40b4bf91c3d097011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upDistance: 8
+  speed: 0.5
+--- !u!1 &1389929930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389929931}
+  - component: {fileID: 1389929935}
+  - component: {fileID: 1389929934}
+  - component: {fileID: 1389929933}
+  - component: {fileID: 1389929932}
+  m_Layer: 0
+  m_Name: StartCinematicCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1389929931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389929930}
+  m_LocalRotation: {x: -0.000008130986, y: 0.9238796, z: 0.0000033679628, w: -0.38268325}
+  m_LocalPosition: {x: -31.26, y: -8.19, z: 72.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7834403796453452224}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 225, z: -0.001}
+--- !u!20 &1389929935
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389929930}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 100
+  field of view: 45
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &1389929934
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389929930}
+  m_Enabled: 1
+--- !u!114 &1389929933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389929930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9671c053136fb8e47a76062db7b94cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ITweenSpace: 0
+  EaseTypeMovement: 0
+  timeMovement: 2
+  delayMovement: 3
+  LoopTypeMovement: 0
+  Movement: 1
+  initialPosition3D: {x: -32.33, y: -8.19, z: 73.04}
+  targetPosition3D: {x: -32.62, y: -8.19, z: 66.3}
+  initialPosition2D: {x: 0, y: 0}
+  targetPosition2D: {x: 0, y: 0}
+  movementTweenCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CanvasGroupFade: 0
+  InitialAlpha: 0
+  TargetAlpha: 0
+  EaseTypeAlpha: 0
+  timeAlpha: 0
+  delayAlpha: 0
+  LoopTypeAlpha: 0
+  AlphaTweenCompletionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  EaseTypeRotation: 0
+  timeRotation: 4
+  delayRotation: 3
+  LoopTypeRotation: 0
+  Rotation: 1
+  initialRotation: {x: -0, y: 225, z: 0}
+  targetRotation: {x: 0, y: 430, z: 0}
+  rotationTweenCompleteEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1389929932}
+        m_TargetAssemblyTypeName: CinematicHandler, Assembly-CSharp
+        m_MethodName: OnCinematicEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EaseTypeScale: 0
+  timeScale: 1
+  delayScale: 0
+  LoopTypeScale: 0
+  Scale: 0
+  initialScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 0, y: 0, z: 0}
+  scaleTweenCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  delayShakeRotation: 0
+  ShakeRotation: 0
+  timeShakeRotation: 1
+  shakeRotationAmountX: 0
+  shakeRotationAmountY: 0
+  shakeRotationAmountZ: 0
+  shakeRotationTweenCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  delayShakePosition: 0
+  ShakePosition: 0
+  timeShakePosition: 1
+  shakePositionAmountX: 0
+  shakePositionAmountY: 0
+  shakePositionAmountZ: 0
+  shakePositionTweenCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  delayShakeScale: 0
+  ShakeScale: 0
+  timeShakeScale: 1
+  shakeScaleAmountX: 0
+  shakeScaleAmountY: 0
+  shakeScaleAmountZ: 0
+  shakeScaleTweenCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  playOnAwake: 1
+--- !u!114 &1389929932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389929930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd662ea2368da84593b697c52fb8c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnableObjectsOnCinematicEnd:
+  - {fileID: 7835630533258084991}
+  EnableObjectsTime:
+  - 0.5
+  DisbleObjectsOnCinematicEnd:
+  - {fileID: 1389929930}
+  DisableObjectsTime:
+  - 1
 --- !u!1 &7834403796453452225
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +322,8 @@ Transform:
   - {fileID: 5565374501402328406}
   - {fileID: 1929967491428774114}
   - {fileID: 5983708701402422154}
+  - {fileID: 1389929931}
+  - {fileID: 1201951127}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9db68020e14549830cb78c8eff3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endCinematicCam: {fileID: 1201951126}
   dinos:
   - {fileID: 6792852612281138016}
   - {fileID: 8419552735591067073}
@@ -225,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7833743112930740123
 Transform:
   m_ObjectHideFlags: 0
@@ -343,13 +635,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7835986749106915083}
-  m_LocalRotation: {x: 0, y: -0.34611708, z: 0, w: 0.93819135}
-  m_LocalPosition: {x: -18.61, y: -14.33, z: 49.71}
+  m_LocalRotation: {x: 0, y: -0.17708474, z: 0, w: 0.98419565}
+  m_LocalPosition: {x: -24.77, y: -13.87, z: 45.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7833743112930740123}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -40.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -20.4, z: 0}
 --- !u!114 &7866898185921207395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,56 +762,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2533ce83c0d17cb4f890419285b9747d, type: 3}
---- !u!114 &4475504876418192136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5983708701402777514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundHandler: {fileID: 0}
-  anim: {fileID: 6402268164205693232}
-  collider: {fileID: 5046181365467079577}
-  navAgent: {fileID: 7396660507160687226}
-  rotationSpeed: 100
-  runSpeed: 5
-  walkSpeed: 2
-  informOthers: 0
-  dinoHealthDamageMultiplier: 0.5
-  dinoHealthValue: 100
-  hitWaitTime: 2
-  minWaitTimeToMove: 4
-  maxWaitTimeToMove: 11
-  waypoints:
-  - {fileID: 7834403797655852388}
-  shouldLoopWaypoints: 0
---- !u!195 &7396660507160687226
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5983708701402777514}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 3
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 0.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 8
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!82 &7896745958428827126
 AudioSource:
   m_ObjectHideFlags: 0
@@ -636,6 +878,56 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a9f5269b4c68da7489829b576ec3b8b8, type: 3}
   - {fileID: 8300000, guid: 1bcc7b2c965a3ca4eb6f2db6b989469b, type: 3}
   - {fileID: 8300000, guid: 801e15fffcda4534499cd7c954eb879f, type: 3}
+--- !u!114 &4475504876418192136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983708701402777514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundHandler: {fileID: 3762129325766807789}
+  anim: {fileID: 6402268164205693232}
+  collider: {fileID: 5046181365467079577}
+  navAgent: {fileID: 7396660507160687226}
+  rotationSpeed: 100
+  runSpeed: 5
+  walkSpeed: 2
+  informOthers: 0
+  dinoHealthDamageMultiplier: 0.5
+  dinoHealthValue: 100
+  hitWaitTime: 2
+  minWaitTimeToMove: 4
+  maxWaitTimeToMove: 11
+  waypoints:
+  - {fileID: 7834403797655852388}
+  shouldLoopWaypoints: 0
+--- !u!195 &7396660507160687226
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983708701402777514}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 200
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &4330202867148440353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -705,6 +997,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9828ad66f51fba84499622f873aaea62, type: 3}
+--- !u!95 &5111345036094517228 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8861075989151378637, guid: 9828ad66f51fba84499622f873aaea62, type: 3}
+  m_PrefabInstance: {fileID: 4330202867148440353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5565374501402328406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8154846914019917431, guid: 9828ad66f51fba84499622f873aaea62, type: 3}
@@ -713,11 +1010,6 @@ Transform:
 --- !u!1 &5565374501402550646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8154846914020336215, guid: 9828ad66f51fba84499622f873aaea62, type: 3}
-  m_PrefabInstance: {fileID: 4330202867148440353}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5111345036094517228 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8861075989151378637, guid: 9828ad66f51fba84499622f873aaea62, type: 3}
   m_PrefabInstance: {fileID: 4330202867148440353}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &8107190119941684054
@@ -734,57 +1026,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2533ce83c0d17cb4f890419285b9747d, type: 3}
---- !u!114 &6792852612281138016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5565374501402550646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundHandler: {fileID: 0}
-  anim: {fileID: 5111345036094517228}
-  collider: {fileID: 8107190119941684054}
-  navAgent: {fileID: 8514796276876871532}
-  rotationSpeed: 100
-  runSpeed: 5
-  walkSpeed: 2
-  informOthers: 0
-  dinoHealthDamageMultiplier: 0.5
-  dinoHealthValue: 100
-  hitWaitTime: 2
-  minWaitTimeToMove: 5
-  maxWaitTimeToMove: 6
-  waypoints:
-  - {fileID: 7834403798263177860}
-  - {fileID: 7834403797655852388}
-  shouldLoopWaypoints: 0
---- !u!195 &8514796276876871532
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5565374501402550646}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 3
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 0.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 8
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!82 &3502717813735042715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -901,6 +1142,57 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a9f5269b4c68da7489829b576ec3b8b8, type: 3}
   - {fileID: 8300000, guid: 1bcc7b2c965a3ca4eb6f2db6b989469b, type: 3}
   - {fileID: 8300000, guid: 801e15fffcda4534499cd7c954eb879f, type: 3}
+--- !u!114 &6792852612281138016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565374501402550646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundHandler: {fileID: 2994848835328406919}
+  anim: {fileID: 5111345036094517228}
+  collider: {fileID: 8107190119941684054}
+  navAgent: {fileID: 8514796276876871532}
+  rotationSpeed: 100
+  runSpeed: 5
+  walkSpeed: 2
+  informOthers: 0
+  dinoHealthDamageMultiplier: 0.5
+  dinoHealthValue: 100
+  hitWaitTime: 2
+  minWaitTimeToMove: 5
+  maxWaitTimeToMove: 6
+  waypoints:
+  - {fileID: 7834403798263177860}
+  - {fileID: 7834403797655852388}
+  shouldLoopWaypoints: 0
+--- !u!195 &8514796276876871532
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565374501402550646}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 200
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &7774137897937079957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -999,57 +1291,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2533ce83c0d17cb4f890419285b9747d, type: 3}
---- !u!195 &2116101778568535403
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929967491429067970}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 3
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 0.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 8
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &8419552735591067073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929967491429067970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundHandler: {fileID: 0}
-  anim: {fileID: 1232742271970796120}
-  collider: {fileID: 6125095331258790891}
-  navAgent: {fileID: 2116101778568535403}
-  rotationSpeed: 100
-  runSpeed: 5
-  walkSpeed: 2
-  informOthers: 0
-  dinoHealthDamageMultiplier: 0.5
-  dinoHealthValue: 100
-  hitWaitTime: 2
-  minWaitTimeToMove: 4
-  maxWaitTimeToMove: 8
-  waypoints:
-  - {fileID: 7834403797029640476}
-  - {fileID: 7834403797655852388}
-  shouldLoopWaypoints: 0
 --- !u!82 &2939218352421185776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1166,3 +1407,54 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a9f5269b4c68da7489829b576ec3b8b8, type: 3}
   - {fileID: 8300000, guid: 1bcc7b2c965a3ca4eb6f2db6b989469b, type: 3}
   - {fileID: 8300000, guid: 801e15fffcda4534499cd7c954eb879f, type: 3}
+--- !u!195 &2116101778568535403
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929967491429067970}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 200
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &8419552735591067073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929967491429067970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4789b699a5fb4d843c50fd848c5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundHandler: {fileID: 197731227979589532}
+  anim: {fileID: 1232742271970796120}
+  collider: {fileID: 6125095331258790891}
+  navAgent: {fileID: 2116101778568535403}
+  rotationSpeed: 100
+  runSpeed: 5
+  walkSpeed: 2
+  informOthers: 0
+  dinoHealthDamageMultiplier: 0.5
+  dinoHealthValue: 100
+  hitWaitTime: 2
+  minWaitTimeToMove: 4
+  maxWaitTimeToMove: 8
+  waypoints:
+  - {fileID: 7834403797029640476}
+  - {fileID: 7834403797655852388}
+  shouldLoopWaypoints: 0

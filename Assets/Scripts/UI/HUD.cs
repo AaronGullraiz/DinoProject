@@ -59,12 +59,23 @@ public class HUD : MonoBehaviour
 
     public void SetUIOnLevelEnd()
     {
-        GetComponent<CanvasGroup>().alpha = 0;
-        GetComponent<CanvasGroup>().interactable = false;
+        DisableHud();
         if (isAiming)
         {
             OnAimBtnPressed();
         }
+    }
+
+    public void EnableHud()
+    {
+        GetComponent<CanvasGroup>().alpha = 1;
+        GetComponent<CanvasGroup>().interactable = true;
+    }
+
+    public void DisableHud()
+    {
+        GetComponent<CanvasGroup>().alpha = 0;
+        GetComponent<CanvasGroup>().interactable = false;
     }
 
     public Vector2 GetJoystickValues()

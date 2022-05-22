@@ -64,11 +64,14 @@ public class LevelSelection : PopupBase
     public void OnLevelButtonClicked(int levelNo)
     {
         SoundsManager.Instance.PlaySound(SoundClip.BUTTONCLICK);
-        Utilities.currentSelectedLevel = levelNo;
+        if (PreferenceManager.UnlockedLevels >= levelNo)
+        {
+            Utilities.currentSelectedLevel = levelNo;
 
-        this._adsManager.Admob_Unity();
+            this._adsManager.Admob_Unity();
 
-        GameManager.Instance.ChangeGameState(GameState.LOADING);
+            GameManager.Instance.ChangeGameState(GameState.LOADING);
+        }
     }
 
     public override void UpdateUI()
