@@ -10,8 +10,9 @@ public class LoadingScreen : PopupBase
     private float fillAmountMultiplier = 1f;
     private AsyncOperation operation;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         DontDestroyOnLoad(this.gameObject);
         fillerImage.fillAmount = 0;
         StartCoroutine(Loading());

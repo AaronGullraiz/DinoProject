@@ -569,4 +569,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupState: 10
+  _showAdOnOpen: 1
   fillerImage: {fileID: 5968753754239679677}

@@ -20,7 +20,6 @@ public class MainMenuPopup : PopupBase
         {
             case "PlayBtn":
                 {
-                    this._adsManager.Admob_Unity();
                     GameManager.Instance.ChangeGameState(GameState.MODESELECTION);
                     break;
                 }

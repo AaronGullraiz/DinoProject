@@ -8,11 +8,26 @@ public abstract class PopupBase : MonoBehaviour
 
     private bool isPopupClosed;
 
+    [SerializeField]
+    protected bool _showAdOnOpen = false;
+
     protected AdCalls _adsManager;
+
+    protected virtual void Awake()
+    {
+        this._adsManager = AdCalls.instance;
+
+        if (this._adsManager == null)
+            this._adsManager = FindObjectOfType<AdCalls>();
+    }
 
     protected virtual void Start()
     {
-        this._adsManager = AdCalls.instance;
+        if(this._showAdOnOpen)
+        {
+            this._adsManager.Admob_Unity();
+        }
+
         UpdateUI();
     }
 

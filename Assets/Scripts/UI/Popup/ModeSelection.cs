@@ -7,7 +7,7 @@ public class ModeSelection : PopupBase
 
     public GameObject[] snowModeLockItems, desertModeLockItems;
 
-    private void Start()
+    protected override void Start()
     {
         base.Start();
 

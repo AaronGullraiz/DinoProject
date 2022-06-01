@@ -42,6 +42,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnStateChangeInternal(GameState gameState)
+    {
+        switch (gameState)
+        {
+            case GameState.LOADING:
+         //       AdCalls.instance.Admob_Unity();
+                break;
+        }
+    }
+
     public GameState GetCurrentState()
     {
         return gameStateStack.Peek();
