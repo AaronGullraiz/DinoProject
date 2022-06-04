@@ -10,9 +10,18 @@ public class LevelCompletePopup : PopupBase
     public Text rewardText, totalText;
     public Text coinsText, cashText;
 
+    public GridLayoutGroup grid;
+
     private void Start()
     {
+        float ratio = (Screen.width + 0.0f) / Screen.height;
+        if (ratio > 1.95f)
+        {
+            grid.cellSize = new Vector2(grid.cellSize.x, 80);
+        }
+
         base.Start();
+
         if (Utilities.currentSelectedLevel >= Utilities.TOTAL_LEVELS)
         {
             nextButton.SetActive(false);
