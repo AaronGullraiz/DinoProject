@@ -246,8 +246,8 @@ MonoBehaviour:
   bgMusicAudioSource: {fileID: 221509695}
   soundfxAudioSource: {fileID: 221509694}
   loopingSoundAudioSource: {fileID: 221509693}
-  menuMusic: {fileID: 8300000, guid: 3f881a509bc8a5645881622010b8b107, type: 3}
-  gameplayMusic: {fileID: 8300000, guid: 38f7379f16cd51048a09ee6a7d25951e, type: 3}
+  menuMusic: {fileID: 8300000, guid: d1bbd26b18207b54090bee55415ecc85, type: 3}
+  gameplayMusic: {fileID: 8300000, guid: ca51cd00ae7e50143b519f75ece400e8, type: 3}
   clipsData:
   - clipName: 0
     clip: {fileID: 8300000, guid: 58760fb961160094cae6e0408bee2c93, type: 3}
