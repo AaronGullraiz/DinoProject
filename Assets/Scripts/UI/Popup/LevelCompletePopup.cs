@@ -10,6 +10,8 @@ public class LevelCompletePopup : PopupBase
     public Text rewardText, totalText;
     public Text coinsText, cashText;
 
+    public GridLayoutGroup grid;
+
     private void Start()
     {
         base.Start();
@@ -21,6 +23,12 @@ public class LevelCompletePopup : PopupBase
         this._adsManager.Admob_Unity();
         rewardText.text = 100 + "";
         totalText.text = 100 + "";
+
+        float ratio = (Screen.width + 0.0f) / Screen.height;
+        if (ratio > 1.95f)
+        {
+            grid.cellSize = new Vector2(grid.cellSize.x, 88);
+        }
     }
 
     public void OnHomeButtonPressed()

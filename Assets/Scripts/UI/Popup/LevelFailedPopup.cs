@@ -8,12 +8,20 @@ public class LevelFailedPopup : PopupBase
     [SerializeField]
     private Text coinsText, cashText, rewardText, totalText;
 
+    public GridLayoutGroup grid;
+
     protected override void Start()
     {
         base.Start();
         this._adsManager.Admob_Unity();
         rewardText.text = "50";
         totalText.text = "50";
+
+        float ratio = (Screen.width+0.0f) / Screen.height;
+        if(ratio > 1.95f)
+        {
+            grid.cellSize = new Vector2(grid.cellSize.x, 88);
+        }
     }
 
     public void OnButtonClickEvent(string btn)
