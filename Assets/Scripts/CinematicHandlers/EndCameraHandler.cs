@@ -12,6 +12,7 @@ public class EndCameraHandler : MonoBehaviour
     {
         transform.position = LevelsManager.Instance.player.transform.position + (Vector3.up*2);
         transform.rotation = LevelsManager.Instance.player.transform.rotation;
+        Camera.main.enabled = false;
 
         var dist = Vector3.Distance(transform.position, target.position);
         if (dist > 10)
