@@ -20,7 +20,7 @@ public class LevelFailedPopup : PopupBase
         float ratio = (Screen.width+0.0f) / Screen.height;
         if(ratio > 1.95f)
         {
-            grid.cellSize = new Vector2(grid.cellSize.x, 88);
+            grid.cellSize = new Vector2(grid.cellSize.x, 80);
         }
     }
 

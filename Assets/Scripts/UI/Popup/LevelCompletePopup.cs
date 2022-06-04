@@ -14,7 +14,14 @@ public class LevelCompletePopup : PopupBase
 
     private void Start()
     {
+        float ratio = (Screen.width + 0.0f) / Screen.height;
+        if (ratio > 1.95f)
+        {
+            grid.cellSize = new Vector2(grid.cellSize.x, 80);
+        }
+
         base.Start();
+
         if (Utilities.currentSelectedLevel >= Utilities.TOTAL_LEVELS)
         {
             nextButton.SetActive(false);
@@ -23,12 +30,6 @@ public class LevelCompletePopup : PopupBase
         this._adsManager.Admob_Unity();
         rewardText.text = 100 + "";
         totalText.text = 100 + "";
-
-        float ratio = (Screen.width + 0.0f) / Screen.height;
-        if (ratio > 1.95f)
-        {
-            grid.cellSize = new Vector2(grid.cellSize.x, 88);
-        }
     }
 
     public void OnHomeButtonPressed()
